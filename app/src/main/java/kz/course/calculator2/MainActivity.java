@@ -8,45 +8,87 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    Button buttonDel, buttony, button1, button2, button3, buttonj, button4, button5, button6, buttonk, button7, button8, button9, buttonl, buttone, buttont, buttonm, buttonn;
-    TextView tvSan;
-
+    Button buttonDel, button1, button2, button3, button4, button5, button6,  button7, button8, button9, buttone, buttont, buttonm;
+    Button buttony, buttonj, buttonk, buttonl, buttonn;
+    TextView tvSan, tvZapis;
+    String birinshiSan, ekinshiSan, znak, zapisText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        buttonDel = findViewById(R.id.btnDel);
-        buttony = findViewById(R.id.btny);
         button1 = findViewById(R.id.btn1);
         button2 = findViewById(R.id.btn2);
         button3 = findViewById(R.id.btn3);
-        buttonj = findViewById(R.id.btnj);
         button4 = findViewById(R.id.btn4);
         button5 = findViewById(R.id.btn5);
         button6 = findViewById(R.id.btn6);
-        buttonk = findViewById(R.id.btnk);
         button7 = findViewById(R.id.btn7);
         button8 = findViewById(R.id.btn8);
         button9 = findViewById(R.id.btn9);
-        buttonl = findViewById(R.id.btnl);
         buttone = findViewById(R.id.btne);
         buttont = findViewById(R.id.btnt);
         buttonm = findViewById(R.id.btnm);
-        buttonn = findViewById(R.id.btnn);
+
+
         tvSan = findViewById(R.id.tv_san);
+        tvZapis = findViewById(R.id.tv_zapis);
+
+
+        View.OnClickListener buttonOperation = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        }
+        buttony = findViewById(R.id.btny);
+        buttonj = findViewById(R.id.btnj);
+        buttonk = findViewById(R.id.btnk);
+        buttonl = findViewById(R.id.btnl);
+        buttonn = findViewById(R.id.btnn);
+
+
+        buttonn. setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                birinshiSan = tvSan.getText().toString();
+            }
+             znak = "="
+            zapisText = birinshiSan + "znak";
+            tvZapis .setText(zapisText);
+            tvSan. setText("0");
+            }
+        });
+        buttony. setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            ekinshiSan = tvSan.getText().toString();
+            if (znak.equals("+")){
+                int san1 = Integer.parseInt(birinshiSan);
+                int san2 = Integer.parseInt(ekinshiSan);
+                int res = san1 + san2;
+                zapisText = birinshiSan + znak + ekinshiSan + "="+ res;
+                zapisText = birinshiSan + "znak";
+                tvZapis .setText(zapisText);
+                tvSan.setText(""+res);
+            }
+        }
+        znak = "="
+        zapisText = birinshiSan + "znak";
+        tvZapis .setText(zapisText);
+        tvSan. setText("0");
+    }
+});
+
+
+
+
+
+
 
         View.OnClickListener buttonSandar = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 switch (View.getId()) {
-                    case R.id.btnDel
-                        ;
-                        tvSan.setText("Del");
-                        break;
-                    case R.id.btny
-                        ;
-                        tvSan.setText("=");
-                        break;
                     case R.id.btn1:
                         String aldingiSan = tvSan.getText().toString();
                         if (aldingiSan.equals("0")) {
@@ -70,9 +112,6 @@ public class MainActivity extends AppCompatActivity {
                         } else {
                         tvSan.setText(aldingiSan+"3");
                         tvSan.setText("3");
-                        break;
-                        case R.id.btnj:
-                        tvSan.setText("/");
                         break;
                             case R.id.btn4:
                         String aldingiSan = tvSan.getText().toString();
@@ -98,9 +137,7 @@ public class MainActivity extends AppCompatActivity {
                         tvSan.setText(aldingiSan+"6");
                         tvSan.setText("6");
                         break;
-                            case R.id.btnk:
-                        tvSan.setText("-");
-                        break;
+
                             case R.id.btn7:
                         String aldingiSan = tvSan.getText().toString();
                                 if (aldingiSan.equals("0")) {
@@ -125,9 +162,7 @@ public class MainActivity extends AppCompatActivity {
                         tvSan.setText(aldingiSan+"9");
                         tvSan.setText("9");
                         break;
-                                                    case R.id.btnl:
-                        tvSan.setText("*");
-                        break;
+
                                                     case R.id.btne:
                         tvSan.setText(".");
                         break;
@@ -142,9 +177,7 @@ public class MainActivity extends AppCompatActivity {
                                                             case R.id.btnm:
                         tvSan.setText("%");
                         break;
-                                                            case R.id.btnn:
-                        tvSan.setText("+");
-                        break;
+                        33333333333333333333333333333333333333333333333
 
 
                 }
